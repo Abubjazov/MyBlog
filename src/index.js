@@ -1,5 +1,5 @@
 import './index.css'
+import {HeaderComponent} from './components/header.component'
 
-async function app() {
-    await fetch('nnn')
-}
+const header = new HeaderComponent('header')
+
