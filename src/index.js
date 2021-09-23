@@ -1,3 +1,5 @@
 import './index.css'
 
-console.log('Started!')
+async function app() {
+    await fetch('nnn')
+}
