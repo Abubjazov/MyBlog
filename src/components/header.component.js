@@ -7,6 +7,7 @@ export class HeaderComponent extends Component {
 
     init() {
         if (localStorage.getItem('visited')) {
+            document.querySelector('#w-container').classList.remove('hide')
             this.hide()
         }
         this.$elem.querySelector('.js-header-start').addEventListener('click', buttonHandler.bind(this))
@@ -15,5 +16,6 @@ export class HeaderComponent extends Component {
 
 function buttonHandler() {
     localStorage.setItem('visited', JSON.stringify(true))
+    document.querySelector('#w-container').classList.remove('hide')
     this.hide()
 }
