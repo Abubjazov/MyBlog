@@ -7,10 +7,13 @@ import { FavoriteComponent } from './components/favorite.component'
 
 new HeaderComponent('header')
 
-const navigation = new NavigationComponent('navigation')
+const navigation = new NavigationComponent('navigation'),
+      create = new CreateComponent('create'),
+      posts = new PostsComponent('posts'),
+      favorite = new FavoriteComponent('favorite')
 
 navigation.registerTabs([
-    {name: 'create', component: new CreateComponent('create')},
-    {name: 'posts', component: new PostsComponent('posts')},
-    {name: 'favorite', component: new FavoriteComponent('favorite')}
+    {name: 'create', component: create},
+    {name: 'posts', component: posts},
+    {name: 'favorite', component: favorite}
 ])
