@@ -3,15 +3,19 @@ import { apiService } from '../services/api.service'
 import { ParseService } from '../services/parse.service'
 
 export class PostsComponent extends Component {
-    constructor(id) {
+    constructor(id, {progressbar}) {
         super(id)
+        this.progressbar = progressbar
     }
 
     async onShow() {
+        this.progressbar.show()
+
         const fbData = await apiService.getPosts(),
               posts = ParseService.fbObjToArray(fbData),
               html = posts.map(post => renderPost(post)).join(' ')
-
+        
+        this.progressbar.hide()
         this.$elem.innerHTML = html
     }
 }

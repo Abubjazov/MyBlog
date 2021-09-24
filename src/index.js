@@ -4,12 +4,14 @@ import { NavigationComponent } from './components/navigation.component'
 import { CreateComponent } from './components/create.component'
 import { PostsComponent } from './components/posts.component'
 import { FavoriteComponent } from './components/favorite.component'
+import { ProgressBar } from './components/proggressbar.component'
 
 new HeaderComponent('header')
 
-const navigation = new NavigationComponent('navigation'),
+const progressbar = new ProgressBar('loader'),
+      navigation = new NavigationComponent('navigation'),
       create = new CreateComponent('create'),
-      posts = new PostsComponent('posts'),
+      posts = new PostsComponent('posts', {progressbar}),
       favorite = new FavoriteComponent('favorite')
 
 navigation.registerTabs([
