@@ -25,6 +25,6 @@ function submitHandler(event) {
             ...this.form.value()
         }
 
-        console.log('Form Submitted!', formData)
+        this.form.clear()
     }
 }
