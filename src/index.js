@@ -12,7 +12,7 @@ const progressbar = new ProgressBar('loader'),
       navigation = new NavigationComponent('navigation'),
       create = new CreateComponent('create'),
       posts = new PostsComponent('posts', {progressbar}),
-      favorite = new FavoriteComponent('favorite')
+      favorite = new FavoriteComponent('favorite', {progressbar})
 
 navigation.registerTabs([
     {name: 'create', component: create},

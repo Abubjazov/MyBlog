@@ -25,6 +25,16 @@ class ApiService {
             console.log(error)
         }
     }
+
+    async getPostById(id) {
+        try {
+            const request = new Request(`${this.url}/posts/${id}.json`)
+            return (await fetch(request)).json()
+            
+        } catch(error) {
+            console.log(error)
+        }
+    }
 }
 
 export const apiService = new ApiService('https://myblog-c2b81-default-rtdb.firebaseio.com')
